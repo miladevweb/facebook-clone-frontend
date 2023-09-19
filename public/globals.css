@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+   html::-webkit-scrollbar {
+      width: 0.5rem;
+   }
+   html::-webkit-scrollbar-thumb {
+      background-color: hsla(200, 3%, 50%, 0.6);
+   }
+}
+
+@layer utilities {
+   .spinner {
+      border: 4px solid hsla(0, 0%, 0%, 0.1);
+      border-left-color: hsl(190, 100%, 60%);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 2s linear infinite;
+   }
+   @keyframes spin {
+      100% {
+         transform: rotate(360deg);
+      }
+   }
+   .modal::-webkit-scrollbar {
+      width: 0.5rem;
+   }
+   .modal::-webkit-scrollbar-thumb {
+      background-color: hsla(200, 3%, 50%, 0.5);
+   }
+
+   .textarea-transition {
+      transition: all 0.3s ease-in;
+   }
+
+   .textarea-scrollbar::-webkit-scrollbar {
+      width: 0;
+   }
+}
+
+@layer components {
+   .input {
+      @apply py-3 px-5 bg-transparent text-white/90 border-b-[1px] outline-none placeholder:text-white/80;
+   }
+   .formButton {
+      @apply bg-blue-600 w-fit px-3 py-1 rounded-md self-end text-white/80;
+   }
+   .inputImage {
+      @apply text-gray-300 text-3xl cursor-pointer self-end mr-4;
+   }
+
+   .form {
+      @apply flex flex-col w-[750px] bg-white/[.03] gap-y-5 py-10 px-12 backdrop-blur-[3px];
+   }
+}
